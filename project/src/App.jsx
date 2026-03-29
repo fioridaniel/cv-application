@@ -32,7 +32,7 @@ function App() {
           setSchoolName={setSchoolName} setStudyTitle={setStudyTitle} setStudyDate={setStudyDate}
         ></EducationalExpercience>
         
-        <button type="submit">Salvar Currículo</button>
+        <button type="submit">Submit CV</button>
       </form>
     </>
   )
