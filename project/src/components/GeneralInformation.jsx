@@ -1,28 +1,27 @@
 import { useState } from "react";
 
+import InputInfo from "./InputInfo";
+
 function GeneralInformation({ name, email, phoneNumber, setName, setEmail, setPhoneNumber }) {
     return (
         <>
-            <input
-                type="text"
+            <InputInfo
                 value={name}
-                onChange={(event) => setName(event.target.value)}
-                placeholder="Name"
-            />
+                setFunction={setName}
+                placeHolder={"Name"}
+            ></InputInfo>
 
-            <input
-                type="text"
+            <InputInfo
                 value={email}
-                onChange={(event) => setEmail(event.target.value)}
-                placeholder="Email"
-            />
+                setFunction={setEmail}
+                placeHolder={"Email"}
+            ></InputInfo>
 
-            <input
-                type="text"
+            <InputInfo
                 value={phoneNumber}
-                onChange={(event) => setPhoneNumber(event.target.value)}
-                placeholder="Phone"
-            />
+                setFunction={setPhoneNumber}
+                placeHolder={"Phone"}
+            ></InputInfo>
         </>
     );
 }
