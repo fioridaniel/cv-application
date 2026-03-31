@@ -16,7 +16,7 @@ function EducationalExpercience({ data, onChange }) {
             />
             <InputInfo
                 value={data.schoolDate}
-                setFunction={(v) => onChange('schoolDate', v)}
+                setFunction={(v) => onChange('studyDate', v)}
                 placeHolder={"Date of study"}
             />
         </>
