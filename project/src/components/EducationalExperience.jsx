@@ -1,26 +1,24 @@
 import { useState } from "react";
 import InputInfo from "./InputInfo";
 
-function EducationalExpercience({ schoolName, studyTitle, studyDate, setSchoolName, setStudyTitle, setStudyDate }) {
+function EducationalExpercience({ data, onChange }) {
     return (
         <>
             <InputInfo
-                value={studyTitle}
-                setFunction={setStudyTitle}
+                value={data.studyTitle}
+                setFunction={(v) => onChange('studyTitle', v)}
                 placeHolder={"Title of study"}
-            ></InputInfo>
-
+            />
             <InputInfo
-                value={schoolName}
-                setFunction={setSchoolName}
+                value={data.schoolName}
+                setFunction={(v) => onChange('schoolName', v)}
                 placeHolder={"School name"}
-            ></InputInfo>
-
+            />
             <InputInfo
-                value={studyDate}
-                setFunction={setStudyDate}
+                value={data.schoolDate}
+                setFunction={(v) => onChange('schoolDate', v)}
                 placeHolder={"Date of study"}
-            ></InputInfo>
+            />
         </>
     );
 }
