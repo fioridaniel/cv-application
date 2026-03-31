@@ -1,0 +1,13 @@
+diff --git a/project/src/components/EducationalExperience.jsx b/project/src/components/EducationalExperience.jsx
+index 11827af..f7a7389 100644
+--- a/project/src/components/EducationalExperience.jsx
++++ b/project/src/components/EducationalExperience.jsx
+@@ -16,7 +16,7 @@ function EducationalExpercience({ data, onChange }) {
+             />
+             <InputInfo
+                 value={data.schoolDate}
+-                setFunction={(v) => onChange('schoolDate', v)}
++                setFunction={(v) => onChange('studyDate', v)}
+                 placeHolder={"Date of study"}
+             />
+         </>
