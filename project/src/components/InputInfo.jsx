@@ -1,4 +1,4 @@
-function InputInfo({ value, setFunction, placeHolder}) {
+function InputInfo({ value, setFunction, placeHolder }) {
     return (
         <input
             type="text"

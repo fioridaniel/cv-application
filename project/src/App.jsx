@@ -2,19 +2,51 @@ import { useState } from 'react'
 import './App.css'
 import GeneralInformation from './components/GeneralInformation'
 import EducationalExpercience from './components/EducationalExperience'
+import PraticalExperience from './components/PraticalExeperience';
 
 function App() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [schoolName, setSchoolName] = useState('');
-  const [studyTitle, setStudyTitle] = useState('');
-  const [studyDate, setStudyDate] = useState('');
+  const [generalInformation, setGeneralInformation] = useState({
+    name: '',
+    email: '',
+    phoneNumber: ''
+  });
+
+  const [educationalExpercience, setEducationalExpercience] = useState({
+    schoolName : '',
+    studyTitle : '',
+    studyDate : ''
+  });
+
+  const [praticalExperience, setPraticalExperience] = useState({
+    companyName: '',
+    positionTitle: '',
+    responsibilities: '',
+    dateFrom: '',
+    dateUntil: ''
+  });
+
+  const handleGeneralInformation = (field, data) => {
+    setGeneralInformation(prev => ({
+      ...prev, [field]: data
+    }));
+  };
+
+  const handleEducationalExperience = (field, data) => {
+    setEducationalExpercience(prev => ({
+      ...prev, [field]: data
+    }));
+  };
+
+  const handlePraticalExperience = (field, data) => {
+    setPraticalExperience(prev => ({
+      ...prev, [field]: data
+    }));
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Form submitted!');
-  }
+  };
   
   return (
     <>
@@ -23,19 +55,24 @@ function App() {
         onSubmit={handleSubmit}
       >
         <GeneralInformation
-          name={name} email={email} phoneNumber={phoneNumber}
-          setName={setName} setEmail={setEmail} setPhoneNumber={setPhoneNumber}
+          data={generalInformation}
+          onChange={handleGeneralInformation}
         ></GeneralInformation>
         
         <EducationalExpercience
-          schoolName={schoolName} studyTitle={studyTitle} studyDate={studyDate}
-          setSchoolName={setSchoolName} setStudyTitle={setStudyTitle} setStudyDate={setStudyDate}
+          data={educationalExpercience}
+          onChange={handleEducationalExperience}
         ></EducationalExpercience>
+
+        <PraticalExperience
+          data={praticalExperience}
+          onChange={handlePraticalExperience}
+        ></PraticalExperience>
         
         <button type="submit">Submit CV</button>
       </form>
     </>
-  )
+  );
 }
 
 export default App
