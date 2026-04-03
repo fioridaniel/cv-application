@@ -1,0 +1,87 @@
+import { useState } from 'react'
+import './App.css'
+import GeneralInformation from './components/GeneralInformation'
+import EducationalExpercience from './components/EducationalExperience'
+import PraticalExperience from './components/PraticalExperience';
+import { standart, submit, field } from './styles/style';
+
+function App() {
+  const [generalInformation, setGeneralInformation] = useState({
+    name: '',
+    email: '',
+    phoneNumber: ''
+  });
+
+  const [educationalExpercience, setEducationalExpercience] = useState({
+    schoolName : '',
+    studyTitle : '',
+    studyDate : ''
+  });
+
+  const [praticalExperience, setPraticalExperience] = useState({
+    companyName: '',
+    positionTitle: '',
+    responsibilities: '',
+    dateFrom: '',
+    dateUntil: ''
+  });
+
+  const handleGeneralInformation = (field, data) => {
+    setGeneralInformation(prev => ({
+      ...prev, [field]: data
+    }));
+  };
+
+  const handleEducationalExperience = (field, data) => {
+    setEducationalExpercience(prev => ({
+      ...prev, [field]: data
+    }));
+  };
+
+  const handlePraticalExperience = (field, data) => {
+    setPraticalExperience(prev => ({
+      ...prev, [field]: data
+    }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('Form submitted!');
+  };
+  
+  return (
+    <>
+      <h2 style={standart}>Fill your Resume!</h2>
+      <form
+        onSubmit={handleSubmit}
+      >
+        <div style={standart}>
+          <h3>General Info</h3>
+          <GeneralInformation
+            data={generalInformation}
+            onChange={handleGeneralInformation}
+          ></GeneralInformation>
+        </div>
+        
+        <div style={standart}>
+          <h3>Educational Experience</h3>
+          <EducationalExpercience
+            data={educationalExpercience}
+            onChange={handleEducationalExperience}
+          ></EducationalExpercience>
+        </div>
+
+        <div style={standart}>
+          <h3>Pratical Experience</h3>
+          <PraticalExperience
+            data={praticalExperience}
+            onChange={handlePraticalExperience}
+          ></PraticalExperience>
+        </div>
+        <button style={submit} type="submit">Submit CV</button>
+      </form>
+    </>
+  );
+}
+
+export default App
