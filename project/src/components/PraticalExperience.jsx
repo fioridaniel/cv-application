@@ -1,11 +1,12 @@
 import { useState } from "react";
 import InputInfo from "./InputInfo";
 import { useNavigate } from "react-router";
+import { standartDiv, submit } from "../styles/style";
 
 function PraticalExperience({ data, onChange }) {
   let navigate = useNavigate();
   return (
-    <>
+    <div style={standartDiv}>
       <InputInfo
         value={data.companyName}
         setFunction={(v) => onChange("companyName", v)}
@@ -35,10 +36,12 @@ function PraticalExperience({ data, onChange }) {
         onClick={() => {
           navigate("/");
         }}
+
+        style={{...submit, marginTop : '15px'}}
       >
         Home
       </button>
-    </>
+    </div>
   );
 }
 

@@ -1,5 +1,8 @@
-export const standart = {
-    margin: '20px',
+export const standartDiv = {
+    display: 'flex', 
+    flexDirection: 'column', 
+    alignItems: 'center', 
+    marginTop: '100px'
 };
 
 export const field = {
