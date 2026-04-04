@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import InputInfo from "./InputInfo";
+import { standartDiv, submit } from "../styles/style";
 
 function GeneralInformation({ data, onChange }) {
   let navigate = useNavigate();
 
   return (
-    <>
+    <div style={standartDiv}>
       <InputInfo
         value={data.name}
         setFunction={(v) => onChange("name", v)}
@@ -27,10 +28,12 @@ function GeneralInformation({ data, onChange }) {
         onClick={() => {
           navigate("/educational-experience");
         }}
+
+        style={{...submit, marginTop : '15px'}}
       >
         Educational expercience
       </button>
-    </>
+    </div>
   );
 }
 

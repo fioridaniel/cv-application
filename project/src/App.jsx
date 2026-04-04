@@ -4,7 +4,7 @@ import GeneralInformation from "./components/GeneralInformation";
 import EducationalExpercience from "./components/EducationalExperience";
 import PraticalExperience from "./components/PraticalExperience";
 import GetStarted from "./components/GetStarted";
-import { standart, submit, field } from "./styles/style";
+import { standartDiv, submit, field } from "./styles/style";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
