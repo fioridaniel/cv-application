@@ -8,6 +8,7 @@ function EducationalExpercience({ data, onChange }) {
 
   return (
     <div style={standartDiv}>
+      <h2>Educational Experience</h2>
       <InputInfo
         value={data.studyTitle}
         setFunction={(v) => onChange("studyTitle", v)}
@@ -24,6 +25,7 @@ function EducationalExpercience({ data, onChange }) {
         placeHolder={"Date of study"}
       />
       <button
+        type="button"
         onClick={() => {
           navigate("/pratical-experience");
         }}

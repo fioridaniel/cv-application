@@ -7,6 +7,7 @@ function PraticalExperience({ data, onChange }) {
   let navigate = useNavigate();
   return (
     <div style={standartDiv}>
+      <h2>Pratical Experience</h2>
       <InputInfo
         value={data.companyName}
         setFunction={(v) => onChange("companyName", v)}
@@ -33,13 +34,14 @@ function PraticalExperience({ data, onChange }) {
         placeHolder={"Date until"}
       />
       <button
+        type="button"
         onClick={() => {
-          navigate("/");
+          navigate("/resume");
         }}
 
         style={{...submit, marginTop : '15px'}}
       >
-        Home
+        Finish Resume
       </button>
     </div>
   );

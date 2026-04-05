@@ -26,3 +26,18 @@ export const text = {
     fontFamily: 'Times New Roman',
     fontSize: '18px'
 };
+
+export const paper = {
+  width: "600px",
+  padding: "30px",
+};
+
+export const section = {
+  marginBottom: "20px"
+};
+
+export const button = {
+  marginTop: "20px",
+  padding: "10px",
+  cursor: "pointer"
+};

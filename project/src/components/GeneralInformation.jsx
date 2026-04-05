@@ -8,6 +8,7 @@ function GeneralInformation({ data, onChange }) {
 
   return (
     <div style={standartDiv}>
+      <h2>General information</h2>
       <InputInfo
         value={data.name}
         setFunction={(v) => onChange("name", v)}
@@ -25,6 +26,7 @@ function GeneralInformation({ data, onChange }) {
       />
 
       <button
+        type="button"
         onClick={() => {
           navigate("/educational-experience");
         }}
