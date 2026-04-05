@@ -1,0 +1,3 @@
+Com base nessa diff, quero que voce faça em ingles 
+um nome de branch com seu respectivo nome de commit e descrição de pr, 
+todos bem objetivos e com semantica SEM EMOJIS.

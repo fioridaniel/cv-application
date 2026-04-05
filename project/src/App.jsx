@@ -4,8 +4,8 @@ import GeneralInformation from "./components/GeneralInformation";
 import EducationalExpercience from "./components/EducationalExperience";
 import PraticalExperience from "./components/PraticalExperience";
 import GetStarted from "./components/GetStarted";
-import { standartDiv, submit, field } from "./styles/style";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Resume from "./components/Resume";
 
 function App() {
   const [generalInformation, setGeneralInformation] = useState({
@@ -49,11 +49,6 @@ function App() {
     }));
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Form submitted!");
-  };
-
   return (
     <>
       <BrowserRouter>
@@ -86,6 +81,17 @@ function App() {
               />
             }
           />
+          <Route
+            path="/resume"
+            element={
+              <Resume
+                generalInfo={generalInformation}
+                educationalInfo={educationalExpercience}
+                practicalInfo={praticalExperience}
+              />
+            }
+          />
+            
         </Routes>
       </BrowserRouter>
     </>
